@@ -12,6 +12,14 @@ export default {
   name: 'app',
   components: {
     HelloWorld
+  },
+  mounted() {
+    if (typeof pendo !== 'undefined') {
+      pendo.track("App Loaded", {
+        page_title: document.title,
+        url: window.location.href
+      });
+    }
   }
 }
 </script>
